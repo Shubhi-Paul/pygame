@@ -1,0 +1,52 @@
+pygame.init() #initiaise pygame
+
+pygame.quit()
+>>> quit()
+
+pygame.event.get() #check what input we giving
+ 1. pygame.QUIT
+ 2. pygame.KEYDOWN
+ 3. pygame.KEYUP
+
+pygame.KEYDOWN #press the arrow key
+ 1. pygame.K_LEFT
+ 2. pygame.K_RIGHT
+ 3. pygame.K_DOWN 
+ 4. pygame.K_UP
+
+pygame.KEYUP #release the arrow key
+ 1. pygame.K_LEFT
+ 2. pygame.K_RIGHT
+ 3. pygame.K_DOWN 
+ 4. pygame.K_UP
+
+gameDisplay = pygame.display.set_mode((display_width,display_height)) #display main window
+
+pygame.display.set_caption("window name") # title of window
+
+pygame.display.update() 
+
+img_variable = pygame.image.load(location) #upload image in game
+
+gameDisplay.blit(img_variable,(x,y)) #display uploaded image in game
+
+clock = pygame.time.Clock()
+>>> clock.tick(60) #refresh in 60 milliseconds
+
+colors
+ 1.black = (0,0,0)
+ 2.white = (255,255,255)
+ 3.red   = (255,0,0)
+ 4.green = (0,255,0)
+ 5.blue  = (0,0,255)
+
+Adding text
+  1. largeText = pygame.font.Font('freesansbold.ttf',115) #create a new Font object from a file (font,size)
+  2. textSurface = font.render(text, True, black)
+  3. TextRect = textSurface.get_rect() 
+  4. TextRect.center = (x,y)
+  5. gameDisplay.blit(TextSurf, TextRect)
+  6. pygame.display.update()
+
+pygame.draw.rect(gameDisplay, color, [x,y,w,h])
+
