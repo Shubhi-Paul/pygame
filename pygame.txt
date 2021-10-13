@@ -4,9 +4,16 @@ pygame.quit()
 >>> quit()
 
 pygame.event.get() #check what input we giving
+A) Event.type
  1. pygame.QUIT
  2. pygame.KEYDOWN
  3. pygame.KEYUP
+B) Event.key
+ 1. pygame.K_LEFT
+ 2. pygame.K_RIGHT
+ 3. pygame.K_DOWN 
+ 4. pygame.K_UP
+
 
 pygame.KEYDOWN #press the arrow key
  1. pygame.K_LEFT
