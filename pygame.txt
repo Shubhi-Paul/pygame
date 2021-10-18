@@ -49,11 +49,10 @@ colors
 
 Adding text
   1. largeText = pygame.font.Font('freesansbold.ttf',115) #create a new Font object from a file (font,size)
-  2. textSurface = font.render(text, True, black)
+  2. textSurface = largeText.render(text, True, black)
   3. TextRect = textSurface.get_rect() 
   4. TextRect.center = (x,y)
   5. gameDisplay.blit(TextSurf, TextRect)
   6. pygame.display.update()
 
 pygame.draw.rect(gameDisplay, color, [x,y,w,h])
-
