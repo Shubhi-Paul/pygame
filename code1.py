@@ -10,7 +10,7 @@ screen_width , screen_ht = 800 , 600
 gameDisplay = pygame.display.set_mode((screen_width,screen_ht))
 pygame.display.set_caption("trial code")
 
-player_car =  pygame.image.load('racecar.png')
+player_car =  pygame.image.load('images//racecar.png')
 
 white = (255,255,255)
 black = (0,0,0)
