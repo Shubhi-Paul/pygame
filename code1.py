@@ -1,3 +1,5 @@
+#movement of car and boundry
+
 import pygame
 import time
 import random
@@ -21,20 +23,32 @@ green = (0,255,0)
 def playercar(x,y):
     gameDisplay.blit(player_car,(x,y))
 
-def start_text():
-    largetext = pygame.font.Font('freesansbold.ttf',25)
-    textSurf = largetext.render("Press any key to begin the game !", True, red)
+def display_text(text):
+    smalltext = pygame.font.Font('freesansbold.ttf',25)
+    #largetext = pygame.font.Font('freesansbold.ttf',75)
+    textSurf = smalltext.render(text, True, red)
     textRect = textSurf.get_rect()
     textRect.center=((screen_width/2 , screen_ht/5))
     gameDisplay.blit(textSurf, textRect)
+
+    pygame.display.update()
+
+    time.sleep(2)
+    gameLoop()
+
     
 
-
+def crash():
+    display_text(" CRASHED ")
+    
 def gameLoop():
 
     x_player = screen_width * 0.45
     y_player = screen_ht * 0.8
     x_change,y_change = 0,0
+
+    car_width = 73
+    car_height = 73
 
     gameQuit = False
 
@@ -66,6 +80,11 @@ def gameLoop():
 
         playercar(x_player,y_player)
 
+        if x_player > screen_width - car_width or x_player < 0:
+            crash()
+        if y_player > screen_ht - car_height or y_player < 0:
+            crash()
+
         pygame.display.update()
         clock.tick(60)
        
@@ -74,13 +93,3 @@ def gameLoop():
 gameLoop()
 pygame.quit()
 quit()
-
-'''
-enemy_car = pygame.image.load('racecar2.png')
-
-def enemycar(x,y):
-    gameDisplay.blit(enemy_car,(x,y))
-
-y_enemy = screen_ht * 0.2 
-x_change, y_change = 0 ,0
-'''

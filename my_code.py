@@ -21,8 +21,8 @@ blue  = (0,0,255)
 
 clock = pygame.time.Clock()
 
-car_player = pygame.image.load('racecar.png')
-car_enemy = pygame.image.load('racecar2.png')
+car_player = pygame.image.load('images//racecar.png')
+car_enemy = pygame.image.load('images//racecar2.png')
 
 def car(x,y):
     gameDisplay.blit(car_player,(x,y))
@@ -87,7 +87,6 @@ def game_loop():
         clock.tick(60)
 
 
-#game_loop()
-time.sleep(5)
+game_loop()
 pygame.quit()
 quit()
