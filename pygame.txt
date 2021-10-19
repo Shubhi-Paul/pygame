@@ -27,6 +27,11 @@ pygame.KEYUP #release the arrow key
  3. pygame.K_DOWN 
  4. pygame.K_UP
 
+if event.type == pygame.KEYDOWN:
+  x_change = 0
+else:
+  x_change,y_change=0,0
+
 gameDisplay = pygame.display.set_mode((display_width,display_height)) #display main window
 
 pygame.display.set_caption("window name") # title of window

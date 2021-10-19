@@ -1,5 +1,3 @@
-#error CAR not showing.... WTH!!!
-
 import pygame
 import time
 
@@ -41,7 +39,7 @@ def display_shape():
 def game_loop():
 
     x = (display_width * 0.45)
-    y = (display_width * 0.8)
+    y = (display_height * 0.8)
     car_width = 73
     car_heigth = 50
 
@@ -56,25 +54,27 @@ def game_loop():
                 quit()
 
             if event.type == pygame.KEYDOWN:
-                if event.type == pygame.K_LEFT:
-                    x_change = 5
-                elif event.type == pygame.K_RIGHT:
+                if event.key == pygame.K_LEFT:
                     x_change = -5
-                elif event.type == pygame.K_DOWN:
+                if event.key == pygame.K_RIGHT:
+                    x_change = 5
+                if event.key == pygame.K_DOWN:
                     y_change = 5
-                elif event.type == pygame.K_UP:
+                if event.key == pygame.K_UP:
                     y_change = -5
-            
+            else:
+                x_change,y_change=0,0
+            '''
             if event.type == pygame.KEYUP:
-                if event.type == pygame.K_LEFT or event.type == pygame.K_RIGHT:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0
-                if event.type == pygame.K_DOWN or event.type == pygame.K_UP:
-                    y_change = 0
+                if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                    y_change = 0'''
         x += x_change
         y += y_change 
 
         gameDisplay.fill(white)
-        display_text("where is my car?")
+        #display_text("where is my car?")
         car(x,y)
         
 
