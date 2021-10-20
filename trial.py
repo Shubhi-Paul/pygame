@@ -40,9 +40,12 @@ def message_display(text):
     time.sleep(2)
 
     game_loop()
-    
-    
 
+def things_dodged(count):
+    font = pygame.font.SysFont(None, 25)
+    text = font.render("Dodged: "+str(count), True, black)
+    gameDisplay.blit(text,(0,0))  
+    
 def crash():
     message_display('You Crashed')
     
@@ -57,6 +60,8 @@ def game_loop():
     thing_speed = 7
     thing_width = 100
     thing_height = 100
+
+    dodged = 0
 
     gameExit = False
 
@@ -84,6 +89,7 @@ def game_loop():
         things(thing_startx, thing_starty, thing_width, thing_height, black)
         thing_starty += thing_speed
         car(x,y)
+        things_dodged(dodged)
 
         if x > display_width - car_width or x < 0:
             crash()
@@ -91,6 +97,9 @@ def game_loop():
         if thing_starty > display_height:
             thing_starty = 0 - thing_height
             thing_startx = random.randrange(0,display_width)
+            dodged += 1
+            thing_speed += 1
+            thing_width += (dodged * 1.2)
 
         ####
         if y < thing_starty+thing_height:

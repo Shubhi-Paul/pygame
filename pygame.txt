@@ -60,4 +60,7 @@ Adding text
   5. gameDisplay.blit(TextSurf, TextRect)
   6. pygame.display.update()
 
+  1. text = largeText.render("Dodged: "+str(count), True, black)
+  2. gameDisplay.blit(text,(0,0))
+
 pygame.draw.rect(gameDisplay, color, [x,y,w,h])
