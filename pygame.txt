@@ -64,3 +64,8 @@ Adding text
   2. gameDisplay.blit(text,(0,0))
 
 pygame.draw.rect(gameDisplay, color, [x,y,w,h])
+pygame.draw.circle(gameDisplay, colour, (x,y), radius)
+pygame.draw.line(gameDisplay, color, (x1,y1), (x2,y2),width)
+pygame.draw.polymgon(gameDisplay,color,((x1,y1),(x2,y2),(x3,y3)))
+
+pixAr = pygame.PixelArray(gameDisplay)
