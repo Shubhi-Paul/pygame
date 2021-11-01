@@ -91,3 +91,6 @@ OVVER THE BROWSER
 ICON
  1. gameIcon = pygame.image.load('carICON.png')
  2. pygame.display.set_icon(gameIcon)
+
+SOUND
+ 1.crash_sound = pygame.mixer.Sound("crash.wav")
