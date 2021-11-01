@@ -79,11 +79,15 @@ Mouse Position
  2. print(mouse)
 
 OVVER THE BROWSER
- 1.import cx_Freeze
- 2.executables = [cx_Freeze.Executable("pygameVideo15.py")]
+ 1.import cx_Freeze #GOTTA INSTALL IT
+ 2.executables = [cx_Freeze.Executable("filename.py")]
  3.cx_Freeze.setup(
      name="A bit Racey",
      options={"build_exe": {"packages":["pygame"],
                             "include_files":["racecar.png"]}},
      executables = executables
      )
+
+ICON
+ 1. gameIcon = pygame.image.load('carICON.png')
+ 2. pygame.display.set_icon(gameIcon)
