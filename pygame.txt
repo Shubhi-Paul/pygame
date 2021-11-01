@@ -93,4 +93,8 @@ ICON
  2. pygame.display.set_icon(gameIcon)
 
 SOUND
- 1.crash_sound = pygame.mixer.Sound("crash.wav")
+ 1. crash_sound = pygame.mixer.Sound("crash.wav")
+
+MUSIC
+ 1. pygame.mixer.music.load('jazz.wav')
+ 2. pygame.mixer.music.play(-1)
