@@ -33,14 +33,14 @@ else:
   x_change,y_change=0,0
 
 gameDisplay = pygame.display.set_mode((display_width,display_height)) #display main window
-
-pygame.display.set_caption("window name") # title of window
-
 pygame.display.update() 
 
-img_variable = pygame.image.load(location) #upload image in game
+Window name
+ pygame.display.set_caption("window name") # title of window
 
-gameDisplay.blit(img_variable,(x,y)) #display uploaded image in game
+Images
+ 1. img_variable = pygame.image.load(location) #upload image in game
+ 2. gameDisplay.blit(img_variable,(x,y)) #display uploaded image in game
 
 clock = pygame.time.Clock()
 >>> clock.tick(60) #refresh in 60 milliseconds
@@ -48,9 +48,12 @@ clock = pygame.time.Clock()
 colors
  1.black = (0,0,0)
  2.white = (255,255,255)
- 3.red   = (255,0,0)
- 4.green = (0,255,0)
- 5.blue  = (0,0,255)
+ 3.bright_red   = (255,0,0)
+ 4.bright_green = (0,255,0)
+ 5.bright_blue  = (0,0,255)
+ 6.red = (200,0,0)
+ 7.green = (0,200,0)
+ 8.blue = (0,0,200)
 
 Adding text
   1. largeText = pygame.font.Font('freesansbold.ttf',115) #create a new Font object from a file (font,size)
@@ -63,9 +66,10 @@ Adding text
   1. text = largeText.render("Dodged: "+str(count), True, black)
   2. gameDisplay.blit(text,(0,0))
 
-pygame.draw.rect(gameDisplay, color, [x,y,w,h])
-pygame.draw.circle(gameDisplay, colour, (x,y), radius)
-pygame.draw.line(gameDisplay, color, (x1,y1), (x2,y2),width)
-pygame.draw.polymgon(gameDisplay,color,((x1,y1),(x2,y2),(x3,y3)))
-
-pixAr = pygame.PixelArray(gameDisplay)
+Drawing shapes
+  1. pygame.draw.rect(gameDisplay, color, [x,y,w,h])
+  2. pygame.draw.circle(gameDisplay, colour, (x,y), radius)
+  3. pygame.draw.line(gameDisplay, color, (x1,y1), (x2,y2),width)
+  4. pygame.draw.polymgon(gameDisplay,color,((x1,y1),(x2,y2),(x3,y3)))
+ 
+  1. pixAr = pygame.PixelArray(gameDisplay)

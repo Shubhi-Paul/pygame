@@ -2,6 +2,8 @@ import pygame
 import time
 import random
 
+from my_code import gameOver
+
 pygame.init()
 
 display_width = 800
@@ -9,7 +11,12 @@ display_height = 600
 
 black = (0,0,0)
 white = (255,255,255)
-red = (255,0,0)
+red = (200,0,0)
+green = (0,200,0)
+blue = (0,0,200)
+bright_red = (255,0,0)
+bright_green = (0,255,0)
+bright_blue = (0,0,255)
 
 car_width = 73
 
@@ -48,6 +55,45 @@ def things_dodged(count):
     
 def crash():
     message_display('You Crashed')
+
+
+def game_intro():
+
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+        
+        gameDisplay.fill(white)
+        largeText = pygame.font.Font('freesansbold.ttf',115)
+        TextSurf, TextRect = text_objects("A bit Racey", largeText)
+        TextRect.center = ((display_width/2),(display_height/2))
+        gameDisplay.blit(TextSurf, TextRect)
+
+        mouse = pygame.mouse.get_pos()
+
+        #print(mouse)
+
+        if 150+100 > mouse[0] > 150 and 450+50 > mouse[1] > 450:
+            pygame.draw.rect(gameDisplay, bright_green,(150,450,100,50))
+        else:
+            pygame.draw.rect(gameDisplay, green,(150,450,100,50))
+
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects("GO!", smallText)
+        textRect.center = ( (150+(100/2)), (450+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+            
+        pygame.draw.rect(gameDisplay, red,(550,450,100,50))
+        
+        pygame.display.update()
+        clock.tick(10)
+
+        
     
 def game_loop():
     x = (display_width * 0.45)
@@ -113,7 +159,7 @@ def game_loop():
         pygame.display.update()
         clock.tick(60)
 
-
+game_intro()
 game_loop()
 pygame.quit()
 quit()
