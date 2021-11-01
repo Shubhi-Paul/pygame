@@ -77,3 +77,13 @@ Drawing shapes
 Mouse Position
  1. mouse = pygame.mouse.get_pos()
  2. print(mouse)
+
+OVVER THE BROWSER
+ 1.import cx_Freeze
+ 2.executables = [cx_Freeze.Executable("pygameVideo15.py")]
+ 3.cx_Freeze.setup(
+     name="A bit Racey",
+     options={"build_exe": {"packages":["pygame"],
+                            "include_files":["racecar.png"]}},
+     executables = executables
+     )
