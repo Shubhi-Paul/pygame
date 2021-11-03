@@ -97,4 +97,10 @@ SOUND
 
 MUSIC
  1. pygame.mixer.music.load('jazz.wav')
- 2. pygame.mixer.music.play(-1)
+ 2. crash_sound = pygame.mixer.Sound("crash.wav")
+ 3. pygame.mixer.music.play(-1) #The -1 signals PyGame to just play forever,  
+    if you put, say, a 5 in there, then the music would play once and 5 more times.
+ 4. pygame.mixer.music.pause()
+ 5. pygame.mixer.music.unpause()
+ 6. pygame.mixer.Sound.play(crash_sound)
+ 7. pygame.mixer.music.stop()
