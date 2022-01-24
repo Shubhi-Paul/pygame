@@ -1,6 +1,4 @@
 # PYGAME <br />
 *PYGAME* <br />
-
 **PYGAME** <br />
-
 *THINGS INCLUDED* <br /> 1. CAR RACE GAME <br /> 2.TEXT AND SHAPE COMMANDS
