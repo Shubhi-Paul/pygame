@@ -35,6 +35,15 @@ else:
 gameDisplay = pygame.display.set_mode((display_width,display_height)) #display main window
 pygame.display.update() 
 
+pygame.display.flip()
+'''
+    This method is similar to pygame.display.update() 
+    which also updates the display, but pygame.display.flip() 
+    updates the entire screen, while pygame.display.update() 
+    only updates the portion of the screen that has been 
+    changed since the last call to pygame.display.update().
+'''
+
 Window name
  pygame.display.set_caption("window name") # title of window
 
@@ -104,3 +113,18 @@ MUSIC
  5. pygame.mixer.music.unpause()
  6. pygame.mixer.Sound.play(crash_sound)
  7. pygame.mixer.music.stop()
+
+COLLISION
+ 1. Rect1.colliderect(Rect2)
+    collision -> returns True
+    does not tell which side collision occurs
+
+ 2. Rect1.collidepoint(x,y)
+    use midpoints of box sides
+    doesnt tell about corners in this case, vice versa
+    NOT IDEAL -> bad for small items
+
+ 3. Check any collision through colliderect 
+    Then calculate position of the collision for each side
+    r1.bottom - r2.top == 0 -> top collision
+    r1.right - r2.left == 0 -> left collision
